@@ -1,0 +1,232 @@
+/* Gujarat Police Surveillance - Tactical Command Theme */
+
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap');
+
+:root {
+  --bg-core: #070a12;
+  --bg-panel: #0d1322;
+  --bg-card: rgba(18, 26, 44, 0.75);
+  --border-tactical: rgba(56, 189, 248, 0.18);
+  --border-alert: rgba(239, 68, 68, 0.5);
+  --accent-cyan: #06b6d4;
+  --accent-amber: #f59e0b;
+  --accent-red: #ef4444;
+  --accent-emerald: #10b981;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-core);
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
+
+.font-tactical {
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+.font-mono-plate {
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.12em;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.25);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.5);
+}
+
+/* Glassmorphism Tactical Panels */
+.tactical-glass {
+  background: rgba(13, 19, 34, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-tactical);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+}
+
+.tactical-glow-border {
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.15), inset 0 0 15px rgba(6, 182, 212, 0.05);
+}
+
+/* Pulsing Red Emergency Alert Banner */
+@keyframes alertPulse {
+  0%, 100% {
+    background-color: rgba(220, 38, 38, 0.95);
+    box-shadow: 0 0 35px rgba(239, 68, 68, 0.8), inset 0 0 20px rgba(0, 0, 0, 0.6);
+  }
+  50% {
+    background-color: rgba(153, 27, 27, 0.95);
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.4), inset 0 0 10px rgba(0, 0, 0, 0.8);
+  }
+}
+
+.emergency-flash {
+  animation: alertPulse 1.2s infinite ease-in-out;
+}
+
+/* High-priority Marker Radar Pulse on Leaflet Map */
+@keyframes radarPulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+}
+
+.radar-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-top: -12px;
+  margin-left: -12px;
+  border-radius: 50%;
+  background: rgba(239, 68, 68, 0.6);
+  pointer-events: none;
+  animation: radarPulse 1.5s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/* Indian High Security Registration Plate (HSRP) Style */
+.hsrp-badge {
+  background: linear-gradient(180deg, #ffffff 0%, #e2e8f0 100%);
+  color: #0f172a;
+  border: 2px solid #000000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+  font-weight: 700;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.hsrp-badge::before {
+  content: "IND";
+  font-size: 8px;
+  font-weight: 900;
+  color: #1e3a8a;
+  margin-right: 6px;
+  border-right: 1.5px solid #1e3a8a;
+  padding-right: 4px;
+  letter-spacing: 0.05em;
+}
+
+.hsrp-badge-alert {
+  background: linear-gradient(180deg, #fee2e2 0%, #fca5a5 100%);
+  border: 2px solid #b91c1c;
+  color: #7f1d1d;
+}
+
+/* Detection Feed Entry Animation */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.feed-item-enter {
+  animation: slideInRight 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Grid Background lines */
+.tactical-grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Leaflet Container Styling */
+#surveillanceMap {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  background-color: #0b0f19;
+}
+
+.leaflet-popup-content-wrapper {
+  background: rgba(15, 23, 42, 0.95) !important;
+  color: #e2e8f0 !important;
+  border: 1px solid rgba(56, 189, 248, 0.3) !important;
+  border-radius: 8px !important;
+  backdrop-filter: blur(8px) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6) !important;
+}
+
+.leaflet-popup-tip {
+  background: rgba(15, 23, 42, 0.95) !important;
+}
+
+/* Multi-Camera Route Tracking & Sequence Markers */
+@keyframes flowRouteDash {
+  from {
+    stroke-dashoffset: 48;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.leaflet-route-animated {
+  stroke-dasharray: 10, 14;
+  animation: flowRouteDash 1.4s linear infinite;
+}
+
+.sequence-marker-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sequence-marker {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 800;
+  font-size: 11px;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.9), 0 2px 4px rgba(0, 0, 0, 0.6);
+  transition: transform 0.2s ease;
+}
+
+.sequence-marker:hover {
+  transform: scale(1.25);
+  box-shadow: 0 0 18px rgba(239, 68, 68, 1);
+}
+
+.sequence-marker-start {
+  background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.9);
+}
+
+.sequence-marker-end {
+  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+  box-shadow: 0 0 14px rgba(220, 38, 38, 1);
+  animation: radarPulse 1.8s infinite;
+}

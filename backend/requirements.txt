@@ -1,0 +1,8 @@
+opencv-python
+ultralytics
+easyocr
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
+python-socketio
