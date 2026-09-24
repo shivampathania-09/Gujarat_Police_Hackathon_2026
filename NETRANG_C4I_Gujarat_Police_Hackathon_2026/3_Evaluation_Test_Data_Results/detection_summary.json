@@ -1,0 +1,83 @@
+{
+  "project": "Gujarat Police Tactical Surveillance Grid (NETRANG C4I)",
+  "evaluation_event": "Gujarat Police Hackathon 2026",
+  "architectural_delivery_model": "Hybrid / Innovative Architecture",
+  "foundational_layer": "Model 1: Centralised CCTV Registry & GIS Mapping Model",
+  "audit_compliance": "Section 65B Indian Evidence Act & DPDP Act 2023",
+  "evaluation_timestamp": "2026-09-24 21:21:10 IST",
+  "benchmarks": {
+    "end_to_end_latency_ms": 278,
+    "bandwidth_reduction_pct": 98.4,
+    "ocr_accuracy_pct": 94.6,
+    "statewide_camera_capacity": 80000,
+    "fps_processed_per_camera": 6.0,
+    "frame_skip_factor": "1-in-5 ticks"
+  },
+  "network_topology": {
+    "tier_1_edge_nodes": "850 District & Police Station Edge Units (YOLOv8 + EasyOCR)",
+    "tier_2_regional_hubs": "5 Range Command Centers (Ahmedabad, Surat, Vadodara, Rajkot, Border)",
+    "tier_3_central_command": "Gandhinagar State CCC (PostGIS Master, Kafka Mesh, DGP Console)"
+  },
+  "active_camera_registry": [
+    {
+      "id": "CAM_AHM_SG_01",
+      "location_name": "SG Highway - ISKCON Cross Road",
+      "latitude": 23.0305,
+      "longitude": 72.5074,
+      "district": "Ahmedabad"
+    },
+    {
+      "id": "CAM_SUR_ATH_02",
+      "location_name": "Athwa Gate Junction",
+      "latitude": 21.1834,
+      "longitude": 72.8105,
+      "district": "Surat"
+    },
+    {
+      "id": "CAM_VAD_ALK_03",
+      "location_name": "Alkapuri Circle",
+      "latitude": 22.3106,
+      "longitude": 73.1812,
+      "district": "Vadodara"
+    },
+    {
+      "id": "CAM_RAJ_TRI_04",
+      "location_name": "Trikon Baug Chowk",
+      "latitude": 22.3008,
+      "longitude": 70.8022,
+      "district": "Rajkot"
+    },
+    {
+      "id": "CAM_GND_INF_05",
+      "location_name": "Infocity Crossroad, CH-0",
+      "latitude": 23.2156,
+      "longitude": 72.6369,
+      "district": "Gandhinagar"
+    }
+  ],
+  "armed_watchlist_targets": [
+    {
+      "plate_number": "GJ01AB1234",
+      "category": "Stolen",
+      "owner_name": "Ramesh Patel",
+      "notes": "Reported stolen near Navrangpura, Ahmedabad. High priority interception."
+    },
+    {
+      "plate_number": "GJ05XY9876",
+      "category": "Wanted",
+      "owner_name": "Karan Shah",
+      "notes": "Wanted Target - Suspect in inter-district armed robbery syndicate."
+    }
+  ],
+  "test_run_statistics": {
+    "total_detections_logged": 110,
+    "target_GJ01AB1234_hits": 24,
+    "target_GJ05XY9876_hits": 21,
+    "multi_camera_trajectory_cities": [
+      "Gandhinagar",
+      "Ahmedabad",
+      "Vadodara"
+    ],
+    "route_reconstruction_status": "VERIFIED (Animated Polyline + Directional Badges [1], [2], [3])"
+  }
+}
